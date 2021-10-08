@@ -1,7 +1,7 @@
 
 <?php
 
-include('db.php');
+include_once("include/config.inc.php");
 $tdate = date("Y-m-d h:i:sa");
 
 ini_set("log_errors", 1);
@@ -41,10 +41,10 @@ while ($rs = mysqli_fetch_array($query, MYSQLI_ASSOC)) {
 
 
 if (!empty($input['entry'][0]['messaging'][0]['message'])) {
-	
-	
-	
-	
+
+
+
+
   if ($message == "หวัดดีหมอ") {
     reply($access_token, $sender, "เกินไปหรือเปล่า");
   } elseif ($message == "cf") {
@@ -57,10 +57,6 @@ if (!empty($input['entry'][0]['messaging'][0]['message'])) {
   } else {
     reply($access_token, $sender, "เจ้าพูดอะไร ไม่รู้ความ");
   }
-
-
-
-
 }
 
 if (!empty($input['entry'][0]['messaging'][0]['postback'])) {
